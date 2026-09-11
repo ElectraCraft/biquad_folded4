@@ -1,0 +1,4 @@
+runs/
+sim/*.vcd
+sim/sim_out
+*.log

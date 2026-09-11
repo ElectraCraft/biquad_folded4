@@ -1,0 +1,9 @@
+{
+  "DESIGN_NAME": "biquad_folded4",
+  "VERILOG_FILES": [
+    "src/biquad_folded4.v"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 60,
+  "PDK": "sky130A"
+}
