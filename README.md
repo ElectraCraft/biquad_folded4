@@ -83,10 +83,10 @@ Correctness was established two independent ways before trusting any physical-de
 | DRC (KLayout, cross-check) | 0 errors |
 | LVS (Netgen) | 0 mismatches |
 | Antenna violations | 0 |
-| Die area | *pending* |
-| Core utilization | *pending* |
-| Standard cell instance count | *pending* |
-| Total power | *pending* |
+| Die area | 111,711 µm² (~0.112 mm²) |
+| Core utilization | 59.3% |
+| Standard cell instance count | 19,383 |
+| Total power | ~115.6 mW |
 
 Clock period was arrived at empirically: an initial 20 ns target failed by ~11 ns at the slow/hot/low-voltage corner, traced to the shared MAC's combinational depth (a 16×16 signed multiply, with no hardened multiplier macro available in sky130). Clock relaxation was found to have diminishing returns as an isolated fix — see Future Work.
 
