@@ -21,6 +21,8 @@ Rather than three parallel multipliers, one shared MAC is time-multiplexed acros
 
 Coefficients are fixed-point, Q8 format (scaled by 2⁸ = 256). All intermediate MAC results are saturated to 16 bits after descaling.
 
+Full derivation of the register-minimization schedule: [`docs/design-notes/register_minimization_derivation.pdf`](docs/design-notes/register_minimization_derivation.pdf).
+
 ## Toolchain
 
 | Stage | Tool |
