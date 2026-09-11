@@ -21,7 +21,7 @@ Rather than three parallel multipliers, one shared MAC is time-multiplexed acros
 
 Coefficients are fixed-point, Q8 format (scaled by 2⁸ = 256). All intermediate MAC results are saturated to 16 bits after descaling.
 
-Full derivation of the register-minimization schedule: [`docs/design-notes/register_minimization_derivation.pdf`](docs/design-notes/register_minimization_derivation.pdf).
+Full derivation of the register-minimization schedule: [`docs/design-notes/register_minimization_derivation.pdf`](docs/design-notes/cktDgm.pdf).
 
 ## Toolchain
 
@@ -98,7 +98,3 @@ Clock period was arrived at empirically: an initial 20 ns target failed by ~11 n
 - **Max slew violations (1377, across 6/9 corners) — characterized, not blocking.** Traced to `DEFAULT_MAX_TRAN`, a fixed 0.75 ns transition-time limit in the sky130_fd_sc_hd library, entirely decoupled from `CLOCK_PERIOD` — confirmed empirically, since violation count did not track clock relaxation the way setup slack did. Not a signoff-gating check.
 - **One max-fanout violation**: the clock tree's root buffer (`clkbuf_0_clk`) drives 16 branches against the library's recommended limit of 10. Addressable via LibreLane's `CLOCK_BUFFER_FANOUT` variable in a future pass.
 - Two floating *net* labels reported by the resizer (zero floating *pins* — likely dead-code remnants from an intentionally-unreachable default mux branch, not a real connectivity gap).
-
-## License
-
-*(add your preferred license, e.g. Apache-2.0, matching LibreLane's own licensing)*
